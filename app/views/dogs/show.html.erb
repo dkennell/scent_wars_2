@@ -1,24 +1,26 @@
 <p id="notice"><%= notice %></p>
+<head>
 
-<p>
-  <strong>Name:</strong>
-  <%= @dog.name %>
-</p>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
 
-<p>
-  <strong>Level:</strong>
-  <%= @dog.level %>
-</p>
-
-<p>
-  <strong>Points:</strong>
-  <%= @dog.points %>
-</p>
-
-<p>
-  <strong>Stamina:</strong>
-  <%= @dog.stamina %>
-</p>
-
-<%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
+<body>
+  <div class="container">
+  	<div class="row">
+		   <div class="col-lg-10 col-sm-6 text-center mt-3">
+            <div class="card">
+               <img class="card-img-top" src="<%= @dog.image %>" alt="Card image">
+              <h2 class="card-header">Name: <%= @dog.name %></h2>
+              <div class="card-body">Level: <%= @dog.level %></div>
+              <div class="card-body">Hydrants Controlled: <%= @dog.visits.count %></div>
+              <div class="card-body">Total Points: <%= @dog.points %></div>
+              <div class="card-footer">Stamina: <%= @dog.stamina %></div>
+            </div>
+          <br>
+          <h2>View Hydrants</h2>
+      </div>
+	 </div>
+  </div>
+</body>
