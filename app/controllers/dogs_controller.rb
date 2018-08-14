@@ -8,16 +8,17 @@ class DogsController < ApplicationController
   end
 
   def create
-    if session[:dog_id].blank?
+    if current_dog.blank?
       dog = Dog.create({
         name: 'dog' + SecureRandom.uuid.to_s,
         level: 1,
         points: 0,
-        stamina: 100
+        stamina: 100,
+        image: 'https://www.what-dog.net/Images/faces2/scroll0015.jpg'
       })
       session[:dog_id] = dog.id
     else
-      redirect_to show_dog_url(session[:dog_id])
+      redirect_to show_dog_url(current_dog)
     end
   end
 
@@ -58,6 +59,6 @@ class DogsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def dog_params
-    params.require(:dog).permit(:name, :level, :points, :stamina)
+    params.require(:dog).permit(:name, :level, :points, :stamina, :image)
   end
 end
