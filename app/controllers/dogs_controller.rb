@@ -18,7 +18,7 @@ class DogsController < ApplicationController
       })
       session[:dog_id] = dog.id
     end
-    redirect_to show_dog_url(current_dog)
+    redirect_to current_dog
   end
 
   # GET /dogs/1
