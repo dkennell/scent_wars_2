@@ -4,6 +4,6 @@ class Hydrant < ApplicationRecord
 
   def owner
     return '' unless visits.any?
-    visits.last.dog
+    visits.last.dog.name
   end
 end
