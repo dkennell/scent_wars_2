@@ -1,6 +1,6 @@
 class Hydrant < ApplicationRecord
-  belongs_to :dog
-  has_many :visits, through :dogs
+  has_many :visits
+  has_many :dogs, through :visits
 
   def owner
     return '' unless visits.any?
