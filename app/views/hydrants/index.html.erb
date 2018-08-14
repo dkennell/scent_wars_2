@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hydrants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dog</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hydrants.each do |hydrant| %>
+      <tr>
+        <td><%= hydrant.dog %></td>
+        <td><%= hydrant.image %></td>
+        <td><%= link_to 'Show', hydrant %></td>
+        <td><%= link_to 'Edit', edit_hydrant_path(hydrant) %></td>
+        <td><%= link_to 'Destroy', hydrant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hydrant', new_hydrant_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dog:</strong>
+  <%= @visit.dog %>
+</p>
+
+<p>
+  <strong>Hydrant:</strong>
+  <%= @visit.hydrant %>
+</p>
+
+<p>
+  <strong>Stamina used:</strong>
+  <%= @visit.stamina_used %>
+</p>
+
+<%= link_to 'Edit', edit_visit_path(@visit) %> |
+<%= link_to 'Back', visits_path %>

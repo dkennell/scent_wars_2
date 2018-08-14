@@ -1,0 +1,27 @@
+<%= form_with(model: hydrant, local: true) do |form| %>
+  <% if hydrant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hydrant.errors.count, "error") %> prohibited this hydrant from being saved:</h2>
+
+      <ul>
+      <% hydrant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dog_id %>
+    <%= form.text_field :dog_id, id: :hydrant_dog_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image, id: :hydrant_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

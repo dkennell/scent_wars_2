@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dog:</strong>
+  <%= @hydrant.dog %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @hydrant.image %>
+</p>
+
+<%= link_to 'Edit', edit_hydrant_path(@hydrant) %> |
+<%= link_to 'Back', hydrants_path %>
