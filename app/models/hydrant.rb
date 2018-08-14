@@ -3,6 +3,7 @@ class Hydrant < ApplicationRecord
   has_many :visits, through :dogs
 
   def owner
+    return '' unless visits.any?
     visits.last.dog
   end
 end
