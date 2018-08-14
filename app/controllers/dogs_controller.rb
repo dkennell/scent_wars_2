@@ -17,9 +17,8 @@ class DogsController < ApplicationController
         image: 'https://www.what-dog.net/Images/faces2/scroll0015.jpg'
       })
       session[:dog_id] = dog.id
-    else
-      redirect_to show_dog_url(current_dog)
     end
+    redirect_to show_dog_url(current_dog)
   end
 
   # GET /dogs/1
