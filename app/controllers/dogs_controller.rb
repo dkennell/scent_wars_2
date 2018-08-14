@@ -16,6 +16,7 @@ class DogsController < ApplicationController
         stamina: 100,
         image: 'https://www.what-dog.net/Images/faces2/scroll0015.jpg'
       })
+      dog.update(name: 'dog-' + dog.id.to_s)
       session[:dog_id] = dog.id
     end
     redirect_to current_dog
